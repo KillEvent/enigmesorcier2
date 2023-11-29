@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquête Magique</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%; 
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enquête Magique</h1>
+    <img src="sorcierquiparle.png" alt="Sorcier qui parle">
+    <p>"J'ai tout vu! Le crime, voici ce qu'il s'est passé. Le tueur avait une cicatrice."</p>
+    <p>À ton avis, qui est le coupable?</p>
+    <input type="text" id="suspectName" placeholder="Nom du coupable">
+    <button onclick="checkCulprit()">Soumettre</button>
+
+    <script>
+        function checkCulprit() {
+            var suspect = document.getElementById('suspectName').value;
+            if (suspect.toLowerCase() === 'atchoum') {
+                var choice = confirm('Veux-tu le dénoncer ?');
+                if (choice) {
+                    window.location.href = 'https://kill-event.com';
+                } else {
+                    window.location.href = 'https://wikipedia.fr';
+                }
+            } else {
+                alert('Réponse incorrecte. Réessaie.');
+            }
+        }
+    </script>
+</body>
+</html>
